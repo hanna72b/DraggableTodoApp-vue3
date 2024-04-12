@@ -11,15 +11,23 @@
     >
       <template #item="{ element: todo }">
         <li
-          class="bg-[aliceblue] text-[rgb(56,80,103)] py-[2px] px-[5px] cursor-grab mb-[10px] rounded"
+          class="flex flex-col  bg-[aliceblue] text-[rgb(56,80,103)] py-[2px] px-[5px] cursor-grab mb-[10px] rounded"
         >
-          {{ todo.title }}
-          {{ todo.status }}
-          <span
-            @click="deleteTodo(todo)"
-            class="delete-icon float-right cursor-pointer"
-            >X</span
-          >
+          <div class="flex items-center justify-between">
+            {{ todo.title }}
+
+            <div class="flex gap-x-2">
+            
+              {{ todo.status }}
+              <span
+                @click="deleteTodo(todo)"
+                class="delete-icon float-right cursor-pointer"
+                >X</span
+              >
+            </div>
+
+          </div>
+
           <div>
             <span class="text-sm">{{ todo.description }}</span>
           </div>
